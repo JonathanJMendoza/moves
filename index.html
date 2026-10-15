@@ -1,8 +1,129 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Moves — good company, less planning</title><link rel="stylesheet" href="/style.css"></head>
-<body><header><a class="logo" href="/">moves<span>✳</span></a><span class="header-note">Good company. Less planning.</span><div class="avatar me" aria-label="Your profile">You</div></header>
-<main><section class="intro"><div><div class="eyebrow"><span class="dot"></span> LESS GROUP CHAT, MORE HANGING OUT</div><h1>What’s the <em>move?</em></h1><p>A little free time. A few good people.<br>See what your friends are up to and jump in.</p></div><button class="primary" id="open-create">＋ &nbsp; I’m free, post a move</button></section>
-<section class="availability"><div class="availability-icon">↗</div><div><strong>Plans don’t have to be a whole thing.</strong><p>Playing guitar? Grabbing a coffee? Leave the door open for your people.</p></div><span class="spark">✳</span></section>
-<div class="feed-heading"><div><h2>The open invite <span id="count"></span></h2><p>Your friends, doing their thing. You’re welcome to join.</p></div><div class="tabs" aria-label="Filter moves"><button class="selected" data-filter="all" aria-pressed="true">All moves</button><button data-filter="now" aria-pressed="false">Happening now</button><button data-filter="joined" aria-pressed="false">I’m going</button></div></div>
-<section id="feed" class="feed" aria-label="Friends’ moves"></section><footer><span class="logo small">moves✳</span><span>Make room for a little spontaneity.</span><span>Prototype · sample friends · saved on this device</span></footer></main>
-<dialog id="create-dialog"><form id="create-form"><div class="modal-heading"><span class="eyebrow">MAKE A LITTLE ROOM</span><button type="button" id="close-create" class="close" aria-label="Close">×</button></div><h2>What are you up to?</h2><p class="muted">A casual invite for your friends. No big production.</p><label>The move<input name="title" maxlength="70" placeholder="A little guitar, a little hanging out" required></label><label>Where?<input name="location" maxlength="60" placeholder="My place" required></label><div class="form-row"><label>When?<select name="start"><option value="now">Right now</option><option value="soon">In 30 minutes</option></select></label><label>For how long?<select name="duration"><option value="60">1 hour</option><option value="120" selected>2 hours</option><option value="180">3 hours</option></select></label></div><label>Who can they bring?<select name="guests"><option>Just you · no plus ones</option><option>Bring a friend · +1 welcome</option><option>The more the merrier</option></select></label><label>A little context <span class="muted">(optional)</span><textarea name="description" maxlength="220" placeholder="All skill levels welcome. Bring your favorite song."></textarea></label><div class="privacy">♧ &nbsp; Shared with your sample friends. Your location is never tracked.</div><button class="primary submit" type="submit">Post my move ↗</button></form></dialog><div id="toast" role="status" aria-live="polite"></div><script type="module" src="/app.js"></script></body></html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Moves — good company, less planning</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="logo" href="/">moves<span>✳</span></a
+      ><span class="header-note">Good company. Less planning.</span>
+      <div class="avatar me" aria-label="Your profile">You</div>
+    </header>
+    <main>
+      <section class="intro">
+        <div>
+          <div class="eyebrow">
+            <span class="dot"></span> LESS GROUP CHAT, MORE HANGING OUT
+          </div>
+          <h1>What’s the <em>move?</em></h1>
+          <p>
+            A little free time. A few good people.<br />See what your friends
+            are up to and jump in.
+          </p>
+        </div>
+        <button class="primary" id="open-create">
+          ＋ &nbsp; I’m free, post a move
+        </button>
+      </section>
+      <section class="availability">
+        <div class="availability-icon">↗</div>
+        <div>
+          <strong>Plans don’t have to be a whole thing.</strong>
+          <p>
+            Playing guitar? Grabbing a coffee? Leave the door open for your
+            people.
+          </p>
+        </div>
+        <span class="spark">✳</span>
+      </section>
+      <div class="feed-heading">
+        <div>
+          <h2>The open invite <span id="count"></span></h2>
+          <p>Your friends, doing their thing. You’re welcome to join.</p>
+        </div>
+        <div class="tabs" aria-label="Filter moves">
+          <button class="selected" data-filter="all" aria-pressed="true">
+            All moves</button
+          ><button data-filter="now" aria-pressed="false">Happening now</button
+          ><button data-filter="joined" aria-pressed="false">I’m going</button>
+        </div>
+      </div>
+      <section id="feed" class="feed" aria-label="Friends’ moves"></section>
+      <footer>
+        <span class="logo small">moves✳</span
+        ><span>Make room for a little spontaneity.</span
+        ><span>Prototype · sample friends · saved on this device</span>
+      </footer>
+    </main>
+    <dialog id="create-dialog">
+      <form id="create-form">
+        <div class="modal-heading">
+          <span class="eyebrow">MAKE A LITTLE ROOM</span
+          ><button
+            type="button"
+            id="close-create"
+            class="close"
+            aria-label="Close"
+          >
+            ×
+          </button>
+        </div>
+        <h2>What are you up to?</h2>
+        <p class="muted">
+          A casual invite for your friends. No big production.
+        </p>
+        <label
+          >The move<input
+            name="title"
+            maxlength="70"
+            placeholder="A little guitar, a little hanging out"
+            required /></label
+        ><label
+          >Where?<input
+            name="location"
+            maxlength="60"
+            placeholder="My place"
+            required
+        /></label>
+        <div class="form-row">
+          <label
+            >When?<select name="start">
+              <option value="now">Right now</option>
+              <option value="soon">In 30 minutes</option>
+            </select></label
+          ><label
+            >For how long?<select name="duration">
+              <option value="60">1 hour</option>
+              <option value="120" selected>2 hours</option>
+              <option value="180">3 hours</option>
+            </select></label
+          >
+        </div>
+        <label
+          >Who can they bring?<select name="guests">
+            <option>Just you · no plus ones</option>
+            <option>Bring a friend · +1 welcome</option>
+            <option>The more the merrier</option>
+          </select></label
+        ><label
+          >A little context <span class="muted">(optional)</span
+          ><textarea
+            name="description"
+            maxlength="220"
+            placeholder="All skill levels welcome. Bring your favorite song."
+          ></textarea>
+        </label>
+        <div class="privacy">
+          ♧ &nbsp; Shared with your sample friends. Your location is never
+          tracked.
+        </div>
+        <button class="primary submit" type="submit">Post my move ↗</button>
+      </form>
+    </dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
